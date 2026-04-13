@@ -2,78 +2,103 @@ import random
 import os
 import tkinter as tk
 
-penz = 1000
-
 def fej_iras(penz):
-    penz=int(penz)
-    os.system('cls' if os.name == 'nt' else 'clear')
-    while True:
-        print(f'Egyenleged: {penz}')
-        tet = int(input('Add meg a tétet: '))
-        penz-=tet
-        print("Fej vagy írás játék!")
-        print("Írj be: fej vagy írás | 0 - kilépés")
-        valasztas = input("A választásod: ").lower()
-        gep = random.choice(["fej", "írás"])
-        print(f"A gép dobása: {gep}")
-
-        if valasztas == gep:
-                    penz+=tet*2
-                    print("Eltaláltad! ")
-                    
-        elif valasztas in ["fej", "írás"]:
-                    penz-=tet
-                    print("Nem találtad el ")
-
-        elif valasztas == '0':
-            os.system('cls' if os.name == 'nt' else 'clear')
-            break
-        else:
-            print("Érvénytelen választás!")
-    with open('penz.txt', 'w+',encoding='utf-8') as f:
-        f.write(str(penz))
-def blackjack(penz):
-    penz=int(penz)
-    def jatek():
+    
+    try:
+        os.system('cls' if os.name == 'nt' else 'clear')    
+        penz=int(penz)
         while True:
-        
-            tet = int(input('Rakd fel tétet: '))
-            if tet > 0:
-                penz-=tet
-                x = random.randint(1,10)
-                y = random.randint(1,10)
-                kartyak = [x,y]
-                print(f'A kártyáid: {x}🂼 és {y}🂼')  
-                huz = input('Szeretnél húzni?\n')
-                if huz == 'igen':
-                    huz = True
-                else:
-                    huz = False
-                    print('akkor nem húzol')
-                if huz == True:
-                    kartyak.append(random.randint(1,10))
-                    print(f'A kártyáid: {kartyak}')
-                    ertek = 0
-                    for kartya in kartyak:
-                        ertek+=kartya
-                if ertek == 21:
-                    penz+=tet*2
-                    print('Nyertél!')
-                else:
-                    print('Vesztettél!')
-                    break
-                            
-            elif int(penz) == 0:
+            print(f'Egyenleged: {penz}')
+            tet = int(input('Add meg a tétet: '))
+            if tet == 0:
                 break
-    os.system('cls' if os.name == 'nt' else 'clear')
-    print(f'Egyenleged: {penz}')
-    jatek()
-    while True:
-        folytat = input('Szeretnéd folytatni?')
-        if folytat == 'igen':
-            jatek()
-            
+            penz-=tet
+            print("Fej vagy írás játék!")
+            print("Írj be: fej vagy írás | 0 - kilépés")
+            valasztas = input("A választásod: ").lower()
+            gep = random.choice(["fej", "írás"])
+            print(f"A gép dobása: {gep}")
 
+            if valasztas == gep:
+                        penz+=tet*2
+                        print("Eltaláltad! ")
+                        
+            elif valasztas in ["fej", "írás"]:
+                        penz-=tet
+                        print("Nem találtad el ")
+
+            elif valasztas == '0':
+                os.system('cls' if os.name == 'nt' else 'clear')
+                break
+            else:
+                print("Érvénytelen választás!")
+        with open('penz.txt', 'w+',encoding='utf-8') as f:
+            f.write(str(penz))
+    except ValueError:
+        print('Az általad megadott érték nem szám formátumú - lásd: tét')
+
+def blackjack(penz):
+    penz = int(penz)
+
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print(f'Egyenleged: {penz}')
+
+        tet = int(input('Rakd fel a tétet: '))
+        if tet <= 0:
+            break
+        if tet > penz:
+            print('Nincs elég pénzed!')
+            input('Enter...')
+            continue
+
+        penz -= tet
+
+        player_kartyak = [random.randint(1, 10), random.randint(1, 10)]
+        dealer_kartyak = [random.randint(1, 10), random.randint(1, 10)]
+
+        while True:
+            player_osszeg = sum(player_kartyak)
+            print(f'\nA kártyáid: {player_kartyak} (összeg: {player_osszeg})')
+
+            if player_osszeg > 21:
+                print('Túllépted a 21-et! Vesztettél.')
+                break
+
+            huz = input('Húzol? (igen/nem): ').lower().strip()
+            if huz == 'igen':
+                player_kartyak.append(random.randint(1, 10))
+            else:
+                break
+
+        if sum(player_kartyak) > 21:
+            input('Enter...')
+            continue
+
+        print(f'\nDealer lapjai: {dealer_kartyak}')
+        while sum(dealer_kartyak) < 17:
+            dealer_kartyak.append(random.randint(1, 10))
+
+        dealer_osszeg = sum(dealer_kartyak)
+        player_osszeg = sum(player_kartyak)
+
+        print(f'Dealer végső lapjai: {dealer_kartyak} (osszeg: {dealer_osszeg})')
+
+        if dealer_osszeg > 21 or player_osszeg > dealer_osszeg:
+            print('Nyertél!')
+            penz += tet * 2
+        elif player_osszeg == dealer_osszeg:
+            print('Döntetlen!')
+            penz += tet
+        else:
+            print('Vesztettél!')
+
+        input('Enter...')
+
+    print(f'Kiléptél. Végső egyenleg: {penz}')
+    with open('penz.txt', 'w+',encoding='utf-8') as f:
+            f.write(str(penz))
+    
 def slot():
     pass
 
@@ -86,7 +111,15 @@ def vesztes():
     label = tk.Label(root, text="Vesztes vagy", font=("Arial", 190))
     label.pack()
     root.mainloop()
-    
+
+os.system('cls' if os.name == 'nt' else 'clear')
+with open('penz.txt', 'r',encoding='utf-8') as f:
+        penz = f.read() 
+reset = input(f'Szeretnéd resetelni az egyenleged? ({penz})\nigen/nem: ')
+if reset == 'igen':
+    with open('penz.txt', 'w+',encoding='utf-8') as f:
+        f.write('1000')
+
 while True:
     with open('penz.txt', 'r',encoding='utf-8') as f:
         penz = f.read()

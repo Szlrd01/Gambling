@@ -1,7 +1,12 @@
 # Gambling
-Projekt2
-Tervek:
-- blackjack
-- slot
-- fej vagy iras
-- f1 fogadas
+
+2. Projekt:
+    Tervek:
+    - blackjack
+    - slot
+    - fej vagy írás
+    - f1 fogadás
+
+    Eddig megvalósúltak:
+    - blackjack
+    - fej vagy írás
