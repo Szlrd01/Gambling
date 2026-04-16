@@ -106,10 +106,13 @@ def slot(penz):
     ikonok = ['💎','🍒','7️⃣','🪙','🍌']
     os.system('cls' if os.name == 'nt' else 'clear')
     while True:
+        print(f'Egyenleged: {penz}')
         tet = int(input('Rakd fel a tétet: '))
+        penz=penz-tet
         if tet <= 0:
             break
-        if tet > penz:
+        if tet > penz and penz != 0:
+            print(f'Egyenleged: {penz}')
             print('Nincs elég pénzed!')
             input('Enter...')
             continue
@@ -118,21 +121,31 @@ def slot(penz):
             for i in range(5):
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print('SLOT MACHINE')
-                print(f'{ikonok[random.randint(0,4)]} | {ikonok[random.randint(0,4)]} | {ikonok[random.randint(0,4)]}')
-                time.sleep(1.5)
+                print(f'|\t{ikonok[random.randint(0,4)]}\t|\t{ikonok[random.randint(0,4)]}\t|\t{ikonok[random.randint(0,4)]}\t|')
+                time.sleep(0.5)
             os.system('cls' if os.name == 'nt' else 'clear')
             print('SLOT MACHINE')
             a = ikonok[random.randint(0,4)]
             b = ikonok[random.randint(0,4)]
             c = ikonok[random.randint(0,4)]
             eredmeny = [a,b,c]
-            print(f'{a} | {b} | {c}')
+            print(f'|\t{a}\t|\t{b}\t|\t{c}\t|')
             if a == '💎' and b == '💎' and c == '💎':
                 penz=tet*25
+                print(f'Egyenleged: {penz}')
                 print('Gratulálok, nyertél!')
                 input('Enter...')
                 break
-                
+            elif a == '🍒' and b == '🍒' and c == '🍒':
+                penz=tet*2
+                print(f'Egyenleged: {penz}')
+                print('Gratulálok, nyertél!')
+                input('Enter...')
+                break
+            else:
+                print('Nem történt semmi')
+                input('Enter...')
+                break
 
 def formula1():
     pass
