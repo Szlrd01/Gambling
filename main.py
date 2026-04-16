@@ -136,6 +136,18 @@ def slot(penz):
                 print('Gratulálok, nyertél!')
                 input('Enter...')
                 break
+            elif a == '7️⃣' and b == '7️⃣' and c == '7️⃣':
+                penz=tet*2
+                print(f'Egyenleged: {penz}')
+                print('Gratulálok, nyertél!')
+                input('Enter...')
+                break
+            elif a == '🍒' and b == '🍒' and c == '🍒':
+                penz=tet*2
+                print(f'Egyenleged: {penz}')
+                print('Gratulálok, nyertél!')
+                input('Enter...')
+                break
             elif a == '🍒' and b == '🍒' and c == '🍒':
                 penz=tet*2
                 print(f'Egyenleged: {penz}')
