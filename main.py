@@ -1,6 +1,8 @@
 import random
 import os
 import tkinter as tk
+import time
+
 
 def fej_iras(penz):
     
@@ -99,8 +101,38 @@ def blackjack(penz):
     with open('penz.txt', 'w+',encoding='utf-8') as f:
             f.write(str(penz))
     
-def slot():
-    pass
+def slot(penz):
+    penz = int(penz)
+    ikonok = ['💎','🍒','7️⃣','🪙','🍌']
+    os.system('cls' if os.name == 'nt' else 'clear')
+    while True:
+        tet = int(input('Rakd fel a tétet: '))
+        if tet <= 0:
+            break
+        if tet > penz:
+            print('Nincs elég pénzed!')
+            input('Enter...')
+            continue
+
+        while True:
+            for i in range(5):
+                os.system('cls' if os.name == 'nt' else 'clear')
+                print('SLOT MACHINE')
+                print(f'{ikonok[random.randint(0,4)]} | {ikonok[random.randint(0,4)]} | {ikonok[random.randint(0,4)]}')
+                time.sleep(1.5)
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print('SLOT MACHINE')
+            a = ikonok[random.randint(0,4)]
+            b = ikonok[random.randint(0,4)]
+            c = ikonok[random.randint(0,4)]
+            eredmeny = [a,b,c]
+            print(f'{a} | {b} | {c}')
+            if a == '💎' and b == '💎' and c == '💎':
+                penz=tet*25
+                print('Gratulálok, nyertél!')
+                input('Enter...')
+                break
+                
 
 def formula1():
     pass
@@ -129,7 +161,7 @@ while True:
         
     else:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print('----  Akóts Bálint Kaszinó  ----')
+        print('----  Bálint-Akóts Diamond Casino  ----')
         print(f'Egyenleged: {penz}')
         x = int(input(f'Mit akarsz játszani?\n(1) Fej vagy írás\n(2) BlackJack\n(3) Slot\n(4) F1 fogadás\n(0) Kilépés\nVálasztásod: '))  
         if x == 1:
@@ -137,7 +169,7 @@ while True:
         elif x == 2:
             blackjack(penz)
         elif x == 3:
-            slot()
+            slot(penz)
         elif x == 4:
             formula1()
         elif x == 0:
