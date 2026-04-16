@@ -104,6 +104,12 @@ def blackjack(penz):
 def slot(penz):
     penz = int(penz)
     ikonok = ['💎','🍒','7️⃣','🪙','🍌']
+    gy_db = 0
+    cs_db = 0
+    h_db = 0
+    c_db = 0
+    b_db = 0
+
     os.system('cls' if os.name == 'nt' else 'clear')
     while True:
         print(f'Egyenleged: {penz}')
@@ -118,6 +124,18 @@ def slot(penz):
             continue
         penz=penz-tet
         while True:
+            a = ikonok[random.randint(0,4)]
+            b = ikonok[random.randint(0,4)]
+            c = ikonok[random.randint(0,4)]
+            eredmeny = [a,b,c]
+            gy_db = eredmeny.count('💎')
+            cs_db = eredmeny.count('🍒')
+            h_db = eredmeny.count('7️⃣')
+            c_db = eredmeny.count('🪙')
+            b_db = eredmeny.count('🍌')
+            
+
+
             for i in range(5):
                 os.system('cls' if os.name == 'nt' else 'clear')
                 print('SLOT MACHINE')
@@ -125,42 +143,61 @@ def slot(penz):
                 time.sleep(0.5)
             os.system('cls' if os.name == 'nt' else 'clear')
             print('SLOT MACHINE')
-            a = ikonok[random.randint(0,4)]
-            b = ikonok[random.randint(0,4)]
-            c = ikonok[random.randint(0,4)]
-            eredmeny = [a,b,c]
+            
+            
+            
+
+
             print(f'|\t{a}\t|\t{b}\t|\t{c}\t|')
             if a == '💎' and b == '💎' and c == '💎':
-                penz=tet*25
+                penz=penz+tet*25
                 print(f'Egyenleged: {penz}')
                 print('Gratulálok, nyertél!')
                 input('Enter...')
                 break
             elif a == '7️⃣' and b == '7️⃣' and c == '7️⃣':
-                penz=tet*2
+                penz=penz+tet*100
                 print(f'Egyenleged: {penz}')
                 print('Gratulálok, nyertél!')
                 input('Enter...')
                 break
             elif a == '🍒' and b == '🍒' and c == '🍒':
-                penz=tet*2
+                penz=penz+tet*2
                 print(f'Egyenleged: {penz}')
                 print('Gratulálok, nyertél!')
                 input('Enter...')
                 break
-            elif a == '🍒' and b == '🍒' and c == '🍒':
-                penz=tet*2
+            elif a == '🪙' and b == '🪙' and c == '🪙':
+                penz=penz+tet*50
+                print(f'Egyenleged: {penz}')
+                print('Gratulálok, nyertél!')
+                input('Enter...')
+                break
+            elif a == '🍌' and b == '🍌' and c == '🍌':
+                penz=penz+tet*10
+                print(f'Egyenleged: {penz}')
+                print('Gratulálok, nyertél!')
+                input('Enter...')
+                break
+            elif gy_db == 2 or cs_db == 2 or h_db == 2 or c_db == 2 or b_db == 2:
+                penz=penz+tet*5
                 print(f'Egyenleged: {penz}')
                 print('Gratulálok, nyertél!')
                 input('Enter...')
                 break
             else:
-                print('Nem történt semmi')
+                print('Sajnos nem nyertél!')
                 input('Enter...')
                 break
+    with open('penz.txt', 'w+',encoding='utf-8') as f:
+            f.write(str(penz))
+    return penz
 
 def formula1():
     pass
+def roulett():
+    pass
+
 
 def vesztes():
     root = tk.Tk()
@@ -172,10 +209,21 @@ def vesztes():
 os.system('cls' if os.name == 'nt' else 'clear')
 with open('penz.txt', 'r',encoding='utf-8') as f:
         penz = f.read() 
-reset = input(f'Szeretnéd resetelni az egyenleged? ({penz})\nigen/nem: ')
-if reset == 'igen':
-    with open('penz.txt', 'w+',encoding='utf-8') as f:
-        f.write('1000')
+        penz = int(penz)
+if penz == 1000:
+    pass
+else:
+    while True:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        reset = input(f'Szeretnéd resetelni az egyenleged? ({penz})\nigen/nem: ')
+        if reset == 'igen':
+            with open('penz.txt', 'w+',encoding='utf-8') as f:
+                f.write('1000')
+            break
+        elif reset == 'nem': 
+            break
+        else:
+            pass
 
 while True:
     with open('penz.txt', 'r',encoding='utf-8') as f:
