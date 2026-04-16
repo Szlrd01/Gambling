@@ -108,7 +108,7 @@ def slot(penz):
     while True:
         print(f'Egyenleged: {penz}')
         tet = int(input('Rakd fel a tétet: '))
-        penz=penz-tet
+        
         if tet <= 0:
             break
         if tet > penz and penz != 0:
@@ -116,7 +116,7 @@ def slot(penz):
             print('Nincs elég pénzed!')
             input('Enter...')
             continue
-
+        penz=penz-tet
         while True:
             for i in range(5):
                 os.system('cls' if os.name == 'nt' else 'clear')
