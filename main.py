@@ -4,6 +4,7 @@ import tkinter as tk
 import time
 
 
+
 def fej_iras(penz):
     
     try:
@@ -193,8 +194,68 @@ def slot(penz):
             f.write(str(penz))
     return penz
 
-def formula1():
-    pass
+def formula1(penz):
+    penz = int(penz)
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+    while True:
+        print(f'Egyenleged: {penz}')
+        tet = int(input('Rakd fel a tétet: '))
+            
+        if tet <= 0:
+            break
+        if tet > penz and penz != 0:
+            print(f'Egyenleged: {penz}')
+            print('Nincs elég pénzed!')
+            input('Enter...')
+            continue
+        penz=penz-tet
+        while True:
+            print("""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                ⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣷⣮⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣅⡀⣀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⢿⣯⣹⣇⡈⢸⠇⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⢀⣈⣿⣿⡤⠔⣇⣀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⣠⣶⣾⢛⣛⣿⣿⣶⡾⣟⡻⠯⣶⣒⣄⠀⠀⠀⠀
+    ⠀⠀⠀⣰⡿⣽⢋⣭⣂⡐⢸⡇⠀⢫⢀⠏⢷⠙⣍⡆⠀⠀⠀
+    ⠀⢀⠴⡿⣱⣿⣿⡏⠀⢹⢸⡇⢀⣾⠛⣼⣿⣧⢩⡝⣆⠀⠀
+    ⢀⣾⡿⣹⣿⣿⣿⣟⡲⣹⢾⠀⢸⣖⣛⣿⣿⣿⣆⢫⠹⢦⠀
+    ⢾⣿⢴⣿⠏⢘⣿⣿⡏⠁⢸⠈⠀⠿⢏⡿⡟⠈⢿⣦⡷⢖⡇
+    ⢸⣿⡄⣿⠀⠀⣿⢿⣿⣆⣸⡇⠀⠈⣹⢧⡇⠀⢸⢻⠃⢹⠇
+    ⠘⣿⣷⡘⡇⠀⢹⣦⣤⣤⣼⣯⣭⣭⣧⣾⠁⠀⣜⣞⣨⡟⠀
+    ⠀⠘⣟⠭⠿⣄⣿⣷⣶⣶⢶⡶⠦⠤⠔⡟⣆⣰⣁⠈⣹⠀⠀
+    ⠀⠀⠘⢤⠔⠁⡹⣟⣿⣻⣞⣇⠻⣄⡴⡫⠈⠈⠙⡠⠃⠀⠀
+    ⠀⠀⠀⠈⠑⡌⢿⣪⣿⢃⣛⣿⠓⠿⢯⣖⣁⠔⠋⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⢨⣿⣿⢿⣭⣿⣿⣯⡛⠪⢽⡛⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⡇⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⢸⣽⣿⣶⣿⡿⠸⣿⣿⣶⣿⣧⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⠇⠀⣻⣿⣿⡿⡏⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⢸⣿⡿⣿⡟⠀⠀⢨⣿⣿⣷⣦⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠘⢻⣿⣿⡇⠀⠀⢠⣿⣿⣿⠋⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⢰⣼⣿⣿⠇⠀⠀⢈⣿⣿⡿⠇⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⢸⣿⣿⣿⡀⠀⠀⠸⣿⣿⣷⡇⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠘⣾⣿⡿⠀⠀⠀⠘⣿⣿⣿⠃⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⣶⣷⣷⠀⠀⠀⠀⣿⣾⣧⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⡼⢿⢿⠏⠀⠀⠀⠀⢻⣿⠿⢧⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠿⠽⠟⠀⠀⠀⠀⠀⠀⠿⠧⠾⠀⠀⠀⠀⠀⠀""")
+            
+            print('Are you ready?')
+            
+
+            
+            time.sleep(5)
+            break
+        
+        
+        for i in range(5):
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print('SLOT MACHINE')
+            print(f'|\t{ikonok[random.randint(0,4)]}\t|\t{ikonok[random.randint(0,4)]}\t|\t{ikonok[random.randint(0,4)]}\t|')
+            time.sleep(0.5)
+            os.system('cls' if os.name == 'nt' else 'clear')
+            print('SLOT MACHINE')
+            
 def roulett():
     pass
 
@@ -244,6 +305,6 @@ while True:
         elif x == 3:
             slot(penz)
         elif x == 4:
-            formula1()
+            formula1(penz)
         elif x == 0:
             break
