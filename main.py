@@ -6,19 +6,20 @@ def reset(penz):
     
     while True:
             os.system('cls' if os.name == 'nt' else 'clear')
-            reset = input(f'Szeretnéd resetelni az egyenleged? ({penz})\nigen/nem: ')
-            if reset == 'igen':
+            res = input(f'Szeretnéd resetelni az egyenleged? ({penz})\nigen/nem: ')
+            if res == 'igen':
                 penz = 1000
                 with open('penz.txt', 'w+',encoding='utf-8') as f:
                     f.write(str(penz))
                 break
-            elif reset == 'nem': 
+            elif res == 'nem': 
                 if not penz.isdigit():
                      penzerror(penz)
                 else:
                     break
             else:
                 pass
+    return penz
     
 def penzerror(penz):
     print('A pénz rossz formátumban lett megadva!')
