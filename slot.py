@@ -37,7 +37,7 @@ def slot(penz):
             
 
 
-            for i in range(5):
+            for i in range(7):
                 tools.torles()
                 print('SLOT MACHINE')
                 print(f'|\t{ikonok[random.randint(0,4)]}\t|\t{ikonok[random.randint(0,4)]}\t|\t{ikonok[random.randint(0,4)]}\t|')
