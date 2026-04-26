@@ -1,5 +1,5 @@
 import random
-import os
+import tools
 
 
 
@@ -7,7 +7,7 @@ import os
 def fej_iras(penz):
     
     try:
-        os.system('cls' if os.name == 'nt' else 'clear')    
+        tools.torles()    
         penz=int(penz)
         while True:
             print(f'Egyenleged: {penz}')
@@ -30,11 +30,11 @@ def fej_iras(penz):
                         print("Nem találtad el ")
 
             elif valasztas == '0':
-                os.system('cls' if os.name == 'nt' else 'clear')
+                tools.torles()
                 break
             else:
                 print("Érvénytelen választás!")
-        with open('penz.txt', 'w+',encoding='utf-8') as f:
+        with open('penz.txt', 'w+') as f:
             f.write(str(penz))
     except ValueError:
         print('Az általad megadott érték nem szám formátumú - lásd: tét')

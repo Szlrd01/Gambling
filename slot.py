@@ -1,5 +1,5 @@
 import random
-import os
+import tools
 import time
 
 def slot(penz):
@@ -11,7 +11,7 @@ def slot(penz):
     c_db = 0
     b_db = 0
 
-    os.system('cls' if os.name == 'nt' else 'clear')
+    tools.torles()
     while True:
         print(f'Egyenleged: {penz}')
         tet = int(input('Rakd fel a tétet: '))
@@ -38,11 +38,11 @@ def slot(penz):
 
 
             for i in range(5):
-                os.system('cls' if os.name == 'nt' else 'clear')
+                tools.torles()
                 print('SLOT MACHINE')
                 print(f'|\t{ikonok[random.randint(0,4)]}\t|\t{ikonok[random.randint(0,4)]}\t|\t{ikonok[random.randint(0,4)]}\t|')
                 time.sleep(0.5)
-            os.system('cls' if os.name == 'nt' else 'clear')
+            tools.torles()
             print('SLOT MACHINE')
             
             

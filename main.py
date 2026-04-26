@@ -1,6 +1,6 @@
-import os
 import app
 import sys
+import tools
 
 def main(penz):
     if penz is None:
@@ -11,12 +11,9 @@ def main(penz):
             sys.exit()
     app.start()   
 
-def torles():
-    os.system('cls' if os.name == 'nt' else 'clear')
-
 def reset(penz):
     while True:
-        torles()
+        tools.torles()
         res = input(f'Szeretnéd újratölteni az egyenleged? ({penz})\nigen/nem: ').strip().lower()
         if res == 'igen':
             penz = 1000
@@ -24,7 +21,7 @@ def reset(penz):
                 f.write(str(penz))
             return penz
         elif res == 'nem':
-            torles()
+            tools.torles()
             return None
         else:
             input('Hibás bemenet...')
@@ -36,7 +33,7 @@ try:
 
     penz=int(penz)
 except ValueError:
-    torles()
+    tools.torles()
     print('A pénz rossz formátumban lett megadva!')
     input('\nEnter a folytatáshoz...')
     penz = reset(0)

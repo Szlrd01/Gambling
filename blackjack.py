@@ -1,11 +1,11 @@
 import random
-import os
+import tools
 
 def blackjack(penz):
     penz = int(penz)
 
     while True:
-        os.system('cls' if os.name == 'nt' else 'clear')
+        tools.torles()
         print(f'Egyenleged: {penz}')
 
         tet = int(input('Rakd fel a tétet: '))
