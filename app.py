@@ -17,7 +17,13 @@ def start():
             os.system('cls' if os.name == 'nt' else 'clear')
             print('----  Bálint-Akóts Diamond Casino  ----')
             print(f'Egyenleged: {penz}')
-            x = int(input(f'Mit akarsz játszani?\n(1) Fej vagy írás\n(2) BlackJack\n(3) Slot\n(4) F1 fogadás\n(0) Kilépés\nVálasztásod: '))  
+            x = input(f'\nMit akarsz játszani?\n(1) Fej vagy írás\n(2) BlackJack\n(3) Slot\n(4) F1 fogadás\n(0) Kilépés\nVálasztásod: ')
+            
+            if x.isdigit():
+                x = int(x)
+            elif not x.isdigit():
+                None
+
             if x == 1:
                 fejiras.fej_iras(penz)
             elif x == 2:
@@ -27,4 +33,6 @@ def start():
             elif x == 4:
                 f1.formula1(penz)
             elif x == 0:
+                os.system('cls' if os.name == 'nt' else 'clear')
                 break
+            

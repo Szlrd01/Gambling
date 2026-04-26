@@ -1,50 +1,63 @@
 import os
 import app
+import sys
+
+def main(penz):
+    if penz is None:
+        sys.exit()
+    if penz < 1000:
+        penz = reset(penz)
+        if penz is None:
+            sys.exit()
+    app.start()   
+
+def torles():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
 
 def reset(penz):
-    os.system('cls' if os.name == 'nt' else 'clear')
-    
     while True:
-            os.system('cls' if os.name == 'nt' else 'clear')
-            res = input(f'Szeretnéd resetelni az egyenleged? ({penz})\nigen/nem: ')
-            if res == 'igen':
-                penz = 1000
-                with open('penz.txt', 'w+',encoding='utf-8') as f:
-                    f.write(str(penz))
-                break
-            elif res == 'nem': 
-                if not penz.isdigit():
-                     penzerror(penz)
-                else:
-                    break
-            else:
-                pass
-    return penz
-    
-def penzerror(penz):
-    print('A pénz rossz formátumban lett megadva!')
-    input('Enter...')
-    reset(penz)    
-        
+        torles()
+        res = input(f'Szeretnéd újratölteni az egyenleged? ({penz})\nigen/nem: ').strip().lower()
+        if res == 'igen':
+            penz = 1000
+            with open('penz.txt', 'w') as f:
+                f.write(str(penz))
+            return penz
+        elif res == 'nem':
+            torles()
+            return None
+        else:
+            input('Hibás bemenet...')
 
+
+
+
+
+
+try:
+    with open('penz.txt', 'r') as f:
+        penz=f.readline().strip()
+
+    penz=int(penz)
+except ValueError:
+    torles()
+    print('A pénz rossz formátumban lett megadva!')
+    input('\nEnter a folytatáshoz...')
+    penz = reset(0)
+except FileNotFoundError:
+    with open('penz.txt', 'w') as f:
+        penz=1000
+        f.write(str(penz))
 
  
-def roulett():
-    pass
+
+main(penz)
 
 
 
-with open('penz.txt', 'r',encoding='utf-8') as f:
-        penz = f.read() 
         
-if penz.isdigit():
-    penz = int(penz)
-    if penz > 999:
-        app.start()
-    elif penz < 1000:
-        reset(penz)
-else:
-    penzerror(penz)
 
 
 
