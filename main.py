@@ -14,8 +14,6 @@ def main(penz):
 def torles():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-
-
 def reset(penz):
     while True:
         torles()
@@ -30,10 +28,6 @@ def reset(penz):
             return None
         else:
             input('Hibás bemenet...')
-
-
-
-
 
 
 try:
@@ -51,15 +45,4 @@ except FileNotFoundError:
         penz=1000
         f.write(str(penz))
 
- 
-
 main(penz)
-
-
-
-        
-
-
-
-
-
