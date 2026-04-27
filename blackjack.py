@@ -62,4 +62,5 @@ def blackjack(penz):
     print(f'Kiléptél. Végső egyenleg: {penz}')
     with open('penz.txt', 'w+',encoding='utf-8') as f:
             f.write(str(penz))
+    return penz
     

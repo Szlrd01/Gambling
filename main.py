@@ -9,7 +9,12 @@ def main(penz):
         penz = reset(penz)
         if penz is None:
             sys.exit()
-    app.start()   
+    app.start()
+    with open('penz.txt', 'r') as f:
+        penz=f.readline().strip()
+
+    penz=int(penz)
+    return penz   
 
 def reset(penz):
     while True:
