@@ -4,6 +4,7 @@ import slot
 import blackjack
 import tools
 import roulette
+import ecasino
 
 def start():
     with open('penz.txt', 'r') as f:
@@ -16,7 +17,7 @@ def start():
             tools.torles()
             print('----  Bálint-Akóts Diamond Casino  ----')
             print(f'Egyenleged: {penz}')
-            x = input(f'\nMit akarsz játszani?\n(1) Fej vagy írás\n(2) BlackJack\n(3) Slot\n(4) F1 fogadás\n(5) Roulette\n\n(x) Mentés\n(0) Kilépés\nVálasztásod: ')
+            x = input(f'\nMit akarsz játszani?\n(1) Fej vagy írás\n(2) BlackJack\n(3) Slot\n(4) F1 fogadás\n(5) Roulette\n\n(e) VIP Casino\n(x) Mentés\n(0) Kilépés\nVálasztásod: ')
             
             if x.isdigit():
                 x = int(x)
@@ -27,6 +28,8 @@ def start():
                 with open('penz.txt', 'w') as f:
                     f.write(str(penz))
                 input('Mentve...')
+            elif x == 'e':
+                penz = ecasino.start(penz)
 
             if x == 1:
                 penz = fejiras.fej_iras(penz)

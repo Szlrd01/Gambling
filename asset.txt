@@ -5,6 +5,27 @@ coin = 50x
 banan = 10x
 2x ikon = 5x
 
+==========
+VIP CASINO
+
+
+alap belépő: 5000
+
+pénz követelmény: 10000
+
+2x lootpool
+
+gyémánt = 50x
+cseresznye 4x
+7-es = 200x
+coin = 100x
+banan = 20x
+2x ikon = 4x
+
+
+==========
+
+
 
 ikonok = ['💎','🍒','7️⃣','🪙','🍌']
 

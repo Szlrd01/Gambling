@@ -25,6 +25,10 @@ def formula1(penz):
                 car=1
         elif car.lower().strip() == 'ferrari':
                 car=0 
+        else:
+                input('Ilyen csapat nem létezik!')
+                penz=penz+tet
+                return penz
         while True:
             tools.torles()
             print("""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
