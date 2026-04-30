@@ -30,12 +30,9 @@ def reset(penz):
             return None
         else:
             input('Hibás bemenet...')
-
-
 try:
     with open('penz.txt', 'r') as f:
         penz=f.readline().strip()
-
     penz=int(penz)
 except ValueError:
     tools.torles()
@@ -46,5 +43,6 @@ except FileNotFoundError:
     with open('penz.txt', 'w') as f:
         penz=1000
         f.write(str(penz))
+
 
 main(penz)

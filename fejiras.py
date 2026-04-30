@@ -1,9 +1,6 @@
 import random
 import tools
 
-
-
-
 def fej_iras(penz):
     
     try:

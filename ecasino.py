@@ -54,12 +54,12 @@ def start(penz):
             
 
 
-            if x == 2:
+            if x == 1:
                 penz = vipblackjack.blackjack(penz)
-            elif x == 3:
+            elif x == 2:
                 penz = vipslot.slot(penz)
-            elif x == 5:
-                penz= viproulette.game(penz)
+            elif x == 3:
+                penz = viproulette.game(penz)
             elif x == 0:
                 
                 tools.torles()
