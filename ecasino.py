@@ -59,7 +59,7 @@ def start(penz):
             elif x == 2:
                 penz = vipslot.slot(penz)
             elif x == 3:
-                penz = viproulette.game(penz)
+                penz = viproulette.main(penz)
             elif x == 0:
                 
                 tools.torles()

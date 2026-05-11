@@ -40,7 +40,7 @@ def start():
             elif x == 4:
                 penz = f1.formula1(penz)
             elif x == 5:
-                penz= roulette.game(penz)
+                penz= roulette.main(penz)
             elif x == 0:
                 
                 tools.torles()

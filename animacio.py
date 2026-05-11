@@ -1,0 +1,2 @@
+def roulett():
+    pass
