@@ -20,5 +20,6 @@ if %errorlevel% neq 0 exit
 
 py -m pip install --upgrade pip
 py -m pip install colorama
+py -m pip install emoji
 
 pause
