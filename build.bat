@@ -1,0 +1,1 @@
+C:\Users\balint.szilard.2024i\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe -m PyInstaller --onefile main.py

@@ -5,9 +5,16 @@ import viproulette
 
 def start(penz):
     while True:
-        with open('ticket.txt','r') as t:
-            ticket = t.readline()
-            ticket = int(ticket)
+        try:
+            with open('ticket.txt','r') as t:
+                ticket = t.readline()
+                ticket = int(ticket)
+        except:
+            with open('ticket.txt','w') as t:
+                ticket=0
+                t.write(str(ticket))
+                
+
         if ticket == 0:
             input('Jegyet kell vásárolnod!')
             x = input('Veszel jegyet? Ára: 5000€\nVálaszod: ')
@@ -68,17 +75,3 @@ def start(penz):
     with open('penz.txt', 'w') as f:
         f.write(str(penz))
     return penz
-
-
-
-
-
-
-
-
-
-
-
-
-
-
