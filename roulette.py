@@ -1,9 +1,14 @@
 import time
 import random
-from colorama import init
 import tools
+try:
+    from colorama import init
+    init()
+except:
+    import subprocess
+    import sys
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "colorama"])
 
-init()
 
 PIROS = "\033[91m"
 FEKETE = "\033[90m"
