@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+import os
+os.system("chcp 65001")
+
+
 import random
 import tools
 import time
