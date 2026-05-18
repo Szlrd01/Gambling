@@ -1,1 +1,1 @@
-python -m PyInstaller --onefile main.py
+python -m PyInstaller --onefile --icon=gambling.ico main.py
