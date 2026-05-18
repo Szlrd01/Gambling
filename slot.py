@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-os.system("chcp 65001")
-
+os.system("chcp 65001 > nul")
 
 import random
 import tools
