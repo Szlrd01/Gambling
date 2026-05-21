@@ -1,7 +1,6 @@
 import time
 import random
 import tools
-
 try:
     from colorama import init
     init()
@@ -149,7 +148,6 @@ class Jatek:
             self.penz = szin_tet(self.eredmeny, self.penz, self.tet)
 
         elif self.valasz == 'páros':
-            
             self.penz = paros_paratlan_tet(self.eredmeny, self.penz, self.tet)
 
         elif self.valasz == 'páratlan':
@@ -160,25 +158,30 @@ class Jatek:
 
 
 def main(penz):
-    tools.torles()
-    penz, tet = tools.tet(penz)
-    tools.torles()
-    print('🎰 ROULETTE JÁTÉK 🎰')
+    while True:
+        tools.torles()
+        penz, tet = tools.tet(penz)
+        if tet == 0:
+            break
+        tools.torles()
 
-    valasz = input(
-        'Mire szeretnél fogadni?\n'
-        '- szám\n'
-        '- szín\n'
-        '- páros\n'
-        '- páratlan\n\n'
-        'Válaszod: '
-    ).lower()
+        print('🎰 ROULETTE JÁTÉK 🎰')
 
-    eredmeny = random.choice(osszes_szam)
+        valasz = input(
+            'Mire szeretnél fogadni?\n'
+            '- szám\n'
+            '- szín\n'
+            '- páros\n'
+            '- páratlan\n\n'
+            'Válaszod: '
+        ).lower()
 
-    jatek = Jatek(valasz, eredmeny, penz, tet)
+        eredmeny = random.choice(osszes_szam)
 
-    jatek.valasztas()
-    penz = jatek.penz
-    input('Kilépés...')
+        jatek = Jatek(valasz, eredmeny, penz, tet)
+
+        jatek.valasztas()
+
+        penz = jatek.penz
+        input('Folytatás...')
     return penz
