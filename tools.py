@@ -47,4 +47,8 @@ def tet(penz):
         penz -= tet
 
         return penz, tet
-    
+
+
+def mentes(penz):
+    with open('penz.txt', 'w+',encoding='utf-8') as f:
+        f.write(str(penz))

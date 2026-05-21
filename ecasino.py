@@ -72,6 +72,5 @@ def start(penz):
                 tools.torles()
                 break
 
-    with open('penz.txt', 'w') as f:
-        f.write(str(penz))
+    tools.mentes(penz)
     return penz

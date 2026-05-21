@@ -29,6 +29,5 @@ def fej_iras(penz):
             break
         else:
             print("Érvénytelen választás!")
-    with open('penz.txt', 'w+') as f:
-        f.write(str(penz))
+    tools.mentes(penz)
     return penz

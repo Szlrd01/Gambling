@@ -547,16 +547,11 @@ def formula1(penz):
                         if car == nyertes:
                                 penz=penz+(tet*4)
                                 print(f'Nyertél! Végső egyenleg: {penz}')
-                                with open('penz.txt', 'w',encoding='utf-8') as f:
-                                        f.write(str(penz))
-                                input('...')
-                                return penz
                         else:                                
                                 print(f'Vesztettél! Végső egyenleg: {penz}')
-                                with open('penz.txt', 'w',encoding='utf-8') as f:
-                                        f.write(str(penz))
-                                input('...')
-                                return penz
+                        tools.mentes(penz)
+                        input('...')
+                        return penz
                 penz=anim(penz)
                 
                 return penz

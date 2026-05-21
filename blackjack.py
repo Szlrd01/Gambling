@@ -99,8 +99,7 @@ def blackjack(penz):
     print(f'Kiléptél. Végső egyenleg: {penz}')
     input('Kilépés...')
     try:
-        with open('penz.txt', 'w', encoding='utf-8') as f:
-            f.write(str(penz))
+        tools.mentes(penz)
 
     except Exception as e:
         print(f'Hiba mentés közben: {e}')

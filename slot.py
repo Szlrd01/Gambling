@@ -79,6 +79,5 @@ def slot(penz):
         else:
             print('Sajnos nem nyertél!')
             input('Folytatás...')
-    with open('penz.txt', 'w+',encoding='utf-8') as f:
-        f.write(str(penz))
+    tools.mentes(penz)
     return penz
