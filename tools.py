@@ -20,3 +20,25 @@ def vesztes():
     root.protocol("WM_DELETE_WINDOW", on_closing)
     
     root.mainloop()
+
+
+def tet(penz):
+    print(f'Egyenleged: {penz}')
+    def levon(penz):
+        tet = input('Rakd fel a tétet: ')
+        while True:
+            tet = input('Rakd fel a tétet: ')
+            if tet.isdigit():
+                tet = int(tet)
+                break
+            else:
+                pass
+        return tet           
+        
+    if tet <= 0:
+        penz=penz-tet
+        return penz
+    if tet > penz and penz != 0:
+        print(f'Egyenleged: {penz}')
+        print('Nincs elég pénzed!')
+        input('Enter...')

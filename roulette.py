@@ -5,9 +5,12 @@ try:
     from colorama import init
     init()
 except:
-    import subprocess
-    import sys
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "colorama"])
+    try:
+        import subprocess
+        import sys
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "colorama"])
+    except:
+        input('A colorama könyvtár nem települt...')
 
 
 PIROS = "\033[91m"
@@ -157,8 +160,7 @@ class Jatek:
 
 def main(penz):
     tools.torles()
-    tet = int(input('Add meg a tétet! '))
-    penz=penz-tet
+    tet = tools.tet(penz)
     print('🎰 ROULETTE JÁTÉK 🎰')
 
     valasz = input(

@@ -17,16 +17,7 @@ def slot(penz):
 
     tools.torles()
     while True:
-        print(f'Egyenleged: {penz}')
-        tet = int(input('Rakd fel a tétet: '))
-        
-        if tet <= 0:
-            break
-        if tet > penz and penz != 0:
-            print(f'Egyenleged: {penz}')
-            print('Nincs elég pénzed!')
-            input('Enter...')
-            continue
+        tet = tools.tet(penz)
         penz=penz-tet
         while True:
             a = ikonok[random.randint(0,4)]

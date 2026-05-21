@@ -6,9 +6,12 @@ try:
     from colorama import init
     init()
 except:
-    import subprocess
-    import sys
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "colorama"])
+    try:
+        import subprocess
+        import sys
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "colorama"])
+    except:
+        input('A colorama könyvtár nem települt...')
 
 
 PIROS = "\033[91m"
