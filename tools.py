@@ -24,7 +24,7 @@ def vesztes():
 def tet(penz):
 
     while True:
-
+        print('::: Rakd meg a téteid! :::')
         print(f'Egyenleged: {penz}')
 
         tet = input('Rakd fel a tétet: ')
@@ -35,14 +35,16 @@ def tet(penz):
 
         tet = int(tet)
 
-        if tet <= 0:
+        if tet < 0:
             input('\n❌ A tét legyen nagyobb mint 0!')
             continue
 
         if tet > penz:
             input('\n❌ Nincs elég pénzed!')
             continue
-
+        if tet == 0:
+            return penz, tet
         penz -= tet
 
         return penz, tet
+    

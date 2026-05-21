@@ -158,29 +158,30 @@ class Jatek:
 
 
 def main(penz):
-    tools.torles()
-    penz, tet = tools.tet(penz)
-    tools.torles()
+    while True:
+        tools.torles()
+        penz, tet = tools.tet(penz)
+        if tet == 0:
+            break
+        tools.torles()
 
-    print('🎰 ROULETTE JÁTÉK 🎰')
+        print('🎰 ROULETTE JÁTÉK 🎰')
 
-    valasz = input(
-        'Mire szeretnél fogadni?\n'
-        '- szám\n'
-        '- szín\n'
-        '- páros\n'
-        '- páratlan\n\n'
-        'Válaszod: '
-    ).lower()
+        valasz = input(
+            'Mire szeretnél fogadni?\n'
+            '- szám\n'
+            '- szín\n'
+            '- páros\n'
+            '- páratlan\n\n'
+            'Válaszod: '
+        ).lower()
 
-    eredmeny = random.choice(osszes_szam)
+        eredmeny = random.choice(osszes_szam)
 
-    jatek = Jatek(valasz, eredmeny, penz, tet)
+        jatek = Jatek(valasz, eredmeny, penz, tet)
 
-    jatek.valasztas()
+        jatek.valasztas()
 
-    penz = jatek.penz
-
-    input('Kilépés...')
-
+        penz = jatek.penz
+        input('Folytatás...')
     return penz
