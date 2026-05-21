@@ -1,5 +1,11 @@
 # Gambling
 
+Ajánlott RENDSZERKÖVETELMÉNY:
+    - Windows 11
+    - 64bit-es processzor
+    - 4GB rendszermemória
+
+
 2. Projekt:
     Tervek:
     - blackjack
