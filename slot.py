@@ -7,9 +7,6 @@ import tools
 import time
 
 def slot(penz):
-    tools.torles()
-    penz, tet = tools.tet(penz)
-    tools.torles()
     ikonok = ['💎','🍒','7️⃣','🪙','🍌']
     gy_db = 0
     cs_db = 0
@@ -19,8 +16,9 @@ def slot(penz):
 
     tools.torles()
     while True:
-        tet = tools.tet(penz)
-        penz=penz-tet
+        tools.torles()
+        penz, tet = tools.tet(penz)
+        tools.torles()
         while True:
             a = ikonok[random.randint(0,4)]
             b = ikonok[random.randint(0,4)]
