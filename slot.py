@@ -7,7 +7,9 @@ import tools
 import time
 
 def slot(penz):
-    penz = int(penz)
+    tools.torles()
+    penz, tet = tools.tet(penz)
+    tools.torles()
     ikonok = ['💎','🍒','7️⃣','🪙','🍌']
     gy_db = 0
     cs_db = 0
@@ -85,6 +87,6 @@ def slot(penz):
                 print('Sajnos nem nyertél!')
                 input('Enter...')
                 break
-    with open('penz.txt', 'w+',encoding='utf-8') as f:
-            f.write(str(penz))
-    return penz
+        with open('penz.txt', 'w+',encoding='utf-8') as f:
+                f.write(str(penz))
+        return penz

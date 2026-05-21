@@ -8,17 +8,10 @@ def formula1(penz):
     tools.torles()
 
     while True:
-        print(f'Egyenleged: {penz}')
-        tet = int(input('Rakd fel a tétet: '))
-            
-        if tet <= 0:
-            break
-        if tet > penz and penz != 0:
-            print(f'Egyenleged: {penz}')
-            print('Nincs elég pénzed!')
-            input('Enter...')
-            continue
-        penz=penz-tet
+        tools.torles()
+        penz, tet = tools.tet(penz)
+        tools.torles()
+        
         car = input('Ki fog nyerni? Ferrari vagy RedBull\nVálasztásod: ')
         nyertes=random.randint(0,1)
         if car.lower().strip() == 'redbull':

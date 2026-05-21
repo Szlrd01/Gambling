@@ -148,7 +148,6 @@ class Jatek:
             self.penz = szin_tet(self.eredmeny, self.penz, self.tet)
 
         elif self.valasz == 'páros':
-            
             self.penz = paros_paratlan_tet(self.eredmeny, self.penz, self.tet)
 
         elif self.valasz == 'páratlan':
@@ -160,7 +159,9 @@ class Jatek:
 
 def main(penz):
     tools.torles()
-    tet = tools.tet(penz)
+    penz, tet = tools.tet(penz)
+    tools.torles()
+
     print('🎰 ROULETTE JÁTÉK 🎰')
 
     valasz = input(
@@ -177,6 +178,9 @@ def main(penz):
     jatek = Jatek(valasz, eredmeny, penz, tet)
 
     jatek.valasztas()
+
     penz = jatek.penz
+
     input('Kilépés...')
+
     return penz

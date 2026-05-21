@@ -2,22 +2,11 @@ import random
 import tools
 
 def blackjack(penz):
-    penz = int(penz)
+    tools.torles()
+    penz, tet = tools.tet(penz)
+    tools.torles()
 
     while True:
-        tools.torles()
-        print(f'Egyenleged: {penz}')
-
-        tet = int(input('Rakd fel a tétet: '))
-        if tet <= 0:
-            break
-        if tet > penz:
-            print('Nincs elég pénzed!')
-            input('Enter...')
-            continue
-
-        penz -= tet
-
         player_kartyak = [random.randint(1, 10), random.randint(1, 10)]
         dealer_kartyak = [random.randint(1, 10), random.randint(1, 10)]
 

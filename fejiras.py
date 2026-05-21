@@ -4,14 +4,10 @@ import tools
 def fej_iras(penz):
     
     try:
-        tools.torles()    
-        penz=int(penz)
+        tools.torles()
+        penz, tet = tools.tet(penz)
+        tools.torles()
         while True:
-            print(f'Egyenleged: {penz}')
-            tet = int(input('Add meg a tétet: '))
-            if tet == 0:
-                break
-            penz-=tet
             print("Fej vagy írás játék!")
             print("Írj be: fej vagy írás | 0 - kilépés")
             valasztas = input("A választásod: ").lower()

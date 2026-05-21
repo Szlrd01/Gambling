@@ -3,29 +3,16 @@ import tools
 import time
 
 def slot(penz):
-    penz = int(penz)
-    if penz > 5:
-        pass
     ikonok = ['💎','🍒','7️⃣','🪙','🍌']
     gy_db = 0
     cs_db = 0
     h_db = 0
     c_db = 0
     b_db = 0
-
-    tools.torles()
     while True:
-        print(f'Egyenleged: {penz}')
-        tet = int(input('Rakd fel a tétet: '))
-        
-        if tet <= 0:
-            break
-        if tet > penz and penz != 0:
-            print(f'Egyenleged: {penz}')
-            print('Nincs elég pénzed!')
-            input('Enter...')
-            continue
-        penz=penz-tet
+        tools.torles()
+        penz, tet = tools.tet(penz)
+        tools.torles()
         while True:
             a = ikonok[random.randint(0,4)]
             b = ikonok[random.randint(0,4)]
@@ -92,6 +79,7 @@ def slot(penz):
                 print('Sajnos nem nyertél!')
                 input('Enter...')
                 break
-    with open('penz.txt', 'w',encoding='utf-8') as f:
-            f.write(str(penz))
+        with open('penz.txt', 'w',encoding='utf-8') as f:
+                f.write(str(penz))
+                break
     return penz

@@ -161,8 +161,8 @@ class Jatek:
 
 def main(penz):
     tools.torles()
-    tet = int(input('Add meg a tétet! '))
-    penz=penz-tet
+    penz, tet = tools.tet(penz)
+    tools.torles()
     print('🎰 ROULETTE JÁTÉK 🎰')
 
     valasz = input(
