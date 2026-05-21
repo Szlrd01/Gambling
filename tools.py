@@ -32,10 +32,11 @@ def tet(penz):
             break
         else:
             pass         
-    if tet <= 0:
-        penz=penz-tet
-        return penz
-    if tet > penz and penz != 0:
-        print(f'Egyenleged: {penz}')
-        print('Nincs elég pénzed!')
-        input('Enter...')
+    while True:
+        if tet <= 0:
+            penz=penz-tet
+            return penz
+        if tet > penz and penz != 0:
+            print(f'Egyenleged: {penz}')
+            print('Nincs elég pénzed!')
+            input('Enter...')
