@@ -1,11 +1,10 @@
-import os
-import tkinter as tk
-import sys
-
 def torles():
+    import os
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def vesztes():
+    import tkinter as tk
+    import sys
     root = tk.Tk()
     root.attributes("-topmost", True)
     
@@ -31,7 +30,7 @@ def tet(penz):
             tet = int(tet)
             break
         else:
-            pass         
+            input(f'\nNem számot adtál meg!\n')         
     while True:
         if tet <= 0:
             penz=penz-tet
