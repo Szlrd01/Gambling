@@ -24,17 +24,14 @@ def vesztes():
 
 def tet(penz):
     print(f'Egyenleged: {penz}')
-    def levon(penz):
+    tet = input('Rakd fel a tétet: ')
+    while True:
         tet = input('Rakd fel a tétet: ')
-        while True:
-            tet = input('Rakd fel a tétet: ')
-            if tet.isdigit():
-                tet = int(tet)
-                break
-            else:
-                pass
-        return tet           
-        
+        if tet.isdigit():
+            tet = int(tet)
+            break
+        else:
+            pass         
     if tet <= 0:
         penz=penz-tet
         return penz
