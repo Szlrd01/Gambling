@@ -59,21 +59,28 @@ def porges_animacio(eredmeny):
 
 def szam_tet(eredmeny, penz, tet):
 
-    valasz = input(
-        'Melyik számra szeretnél fogadni?\nVálaszod: '
-    )
+    while True:
+        valasz = input(
+            'Melyik számra szeretnél fogadni?\nVálaszod: '
+        ).strip()
 
-    if not valasz.isdigit():
-        print('❌ Hibás szám!')
-        return
+        if not valasz.isdigit():
+            print('❌ Hibás szám! Kérlek, adj meg egy 0 és 36 közötti számot.')
+            continue
 
-    valasz = int(valasz)
+        valasz = int(valasz)
+
+        if valasz not in osszes_szam:
+            print('❌ Hibás szám! A számnak 0 és 36 közötti értéknek kell lennie.')
+            continue
+
+        break
 
     porges_animacio(eredmeny)
 
     if valasz == eredmeny:
         print('✅ Nyertél!')
-        penz = tet+penz+(tet*2)
+        penz = tet + penz + (tet * 2)
         return penz
     else:
         print('❌ Vesztettél!')
@@ -82,20 +89,26 @@ def szam_tet(eredmeny, penz, tet):
 
 def szin_tet(eredmeny, penz, tet):
 
-    valasz = input(
-        'Melyik színre fogadsz? (piros/fekete)\nVálaszod: '
-    ).lower()
+    while True:
+        valasz = input(
+            'Melyik színre fogadsz? (piros/fekete)\nVálaszod: '
+        ).lower().strip()
+
+        if valasz in ("piros", "fekete"):
+            break
+
+        print('❌ Hibás szín! Kérlek, írd be: piros vagy fekete.')
 
     porges_animacio(eredmeny)
 
     if valasz == "piros" and eredmeny in piros_szamok:
         print('✅ Nyertél!')
-        penz = tet+penz+(tet*2)
+        penz = tet + penz + (tet * 2)
         return penz
 
     elif valasz == "fekete" and eredmeny in fekete_szamok:
         print('✅ Nyertél!')
-        penz = tet+penz+(tet*2)
+        penz = tet + penz + (tet * 2)
         return penz
 
     else:
@@ -105,9 +118,15 @@ def szin_tet(eredmeny, penz, tet):
 
 def paros_paratlan_tet(eredmeny, penz, tet):
 
-    valasz = input(
-        'Mire fogadsz? (páros/páratlan)\nVálaszod: '
-    ).lower()
+    while True:
+        valasz = input(
+            'Mire fogadsz? (páros/páratlan)\nVálaszod: '
+        ).lower().strip()
+
+        if valasz in ("páros", "páratlan"):
+            break
+
+        print('❌ Hibás választás! Kérlek, írd be: páros vagy páratlan.')
 
     porges_animacio(eredmeny)
 
@@ -117,12 +136,12 @@ def paros_paratlan_tet(eredmeny, penz, tet):
 
     elif valasz == "páros" and eredmeny % 2 == 0:
         print('✅ Nyertél!')
-        penz = tet+penz+(tet*2)
+        penz = tet + penz + (tet * 2)
         return penz
 
     elif valasz == "páratlan" and eredmeny % 2 == 1:
         print('✅ Nyertél!')
-        penz = tet+penz+(tet*2)
+        penz = tet + penz + (tet * 2)
         return penz
 
     else:
@@ -185,7 +204,7 @@ def main(penz):
             eredmeny = random.choice(osszes_szam)
 
             jatek = Jatek(valasz, eredmeny, penz, tet)
-            jatek.valasztas(allapot)
+            allapot = jatek.valasztas(allapot)
 
         penz = jatek.penz
         input('Folytatás...')
