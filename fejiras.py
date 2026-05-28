@@ -8,26 +8,32 @@ def fej_iras(penz):
         if tet == 0:
             break
         tools.torles()
-        print("::: Fej vagy Írás? :::")
-        print("(fej / írás / 0 - kilépés)")
-        valasztas = input("Választásod: ").lower()
-        gep = random.choice(["fej", "írás"])
-        print(f"\nA gép dobása: {gep}")
+        gep = random.choice(["fej", "írás"])        
+        while True:
+            print("::: Fej vagy Írás? :::")
+            print("(fej / írás / 0 - kilépés)")
+            valasztas = input("Választásod: ").lower()
 
-        if valasztas == gep:
-            penz+=tet*2
-            print("Eltaláltad!")
-            input('Enter...')
-                        
-        elif valasztas in ["fej", "írás"]:
-            penz-=tet
-            print("Nem találtad el!")
-            input('Enter...')
+            if valasztas == gep:
+                print(f"\nA gép dobása: {gep}")
+                penz+=tet*2
+                print("Eltaláltad!")
+                input('Enter...')
+                break
+                            
+            elif valasztas in ["fej", "írás"]:
+                print(f"\nA gép dobása: {gep}")
+                penz-=tet
+                print("Nem találtad el!")
+                input('Enter...')
+                break
 
-        elif valasztas == '0':
-            tools.torles()
-            break
-        else:
-            print("Érvénytelen választás!")
+            elif valasztas == '0':
+                tools.torles()
+                break
+            else:
+                input('Érvénytelen választás!')
+                tools.torles()
+        
     tools.mentes(penz)
     return penz
