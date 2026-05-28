@@ -11,20 +11,21 @@ def formula1(penz):
         tools.torles()
         penz, tet = tools.tet(penz)
         tools.torles()
-        
-        car = input('Ki fog nyerni? Ferrari vagy RedBull\nVálasztásod: ')
         nyertes=random.randint(0,1)
-        if car.lower().strip() == 'redbull':
-                car=1
-        elif car.lower().strip() == 'ferrari':
-                car=0 
-        else:
-                input('Ilyen csapat nem létezik!')
-                penz=penz+tet
-                return penz
         while True:
-            tools.torles()
-            print("""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+                car = input('Ki fog nyerni? Ferrari vagy RedBull\nVálasztásod: ')
+                
+                if car.lower().strip() == 'redbull':
+                        car=1
+                        break
+                elif car.lower().strip() == 'ferrari':
+                        car=0 
+                        break
+                else:
+                        input('Ilyen csapat nem létezik!')
+        while True:
+                tools.torles()
+                print("""⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                 ⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
     ⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣷⣮⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀
     ⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣅⡀⣀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀
@@ -53,9 +54,9 @@ def formula1(penz):
     ⠀⠀⠀⠀⠀⡼⢿⢿⠏⠀⠀⠀⠀⢻⣿⠿⢧⠀⠀⠀⠀⠀⠀
     ⠀⠀⠀⠀⠀⠿⠽⠟⠀⠀⠀⠀⠀⠀⠿⠧⠾⠀⠀⠀⠀⠀⠀""")
             
-            print(f'\nAre you ready?')
-            time.sleep(1.5)
-            break
+                print(f'\nAre you ready?')
+                time.sleep(1.5)
+                break
         
             
         while True:
