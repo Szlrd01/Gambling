@@ -1,9 +1,16 @@
+===========
+SLOT
+
+
+
 gyémánt = 25x
 cseresznye 2x
 7-es = 100x
 coin = 50x
 banan = 10x
 2x ikon = 5x
+
+===========
 
 ==========
 VIP CASINO

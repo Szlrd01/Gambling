@@ -139,22 +139,24 @@ class Jatek:
         self.penz=penz
         self.tet=tet
 
-    def valasztas(self):
-
+    def valasztas(self, allapot):
         if self.valasz == 'szám':
             self.penz = szam_tet(self.eredmeny, self.penz, self.tet)
+            allapot = 1
 
         elif self.valasz == 'szín':
             self.penz = szin_tet(self.eredmeny, self.penz, self.tet)
+            allapot = 1
 
-        elif self.valasz == 'páros':
+        elif self.valasz == 'pp':
             self.penz = paros_paratlan_tet(self.eredmeny, self.penz, self.tet)
-
-        elif self.valasz == 'páratlan':
-            self.penz = paros_paratlan_tet(self.eredmeny, self.penz, self.tet)
+            allapot = 1
 
         else:
-            print('❌ Hibás választás!')
+            allapot = 0
+            input('❌ Hibás választás!')
+        
+        return allapot
 
 
 def main(penz):
@@ -163,24 +165,27 @@ def main(penz):
         penz, tet = tools.tet(penz)
         if tet == 0:
             break
-        tools.torles()
+        
 
-        print('🎰 ROULETTE JÁTÉK 🎰')
+        allapot = 0
+        
+        while allapot == 0:
+            tools.torles()
 
-        valasz = input(
-            'Mire szeretnél fogadni?\n'
-            '- szám\n'
-            '- szín\n'
-            '- páros\n'
-            '- páratlan\n\n'
-            'Válaszod: '
-        ).lower()
+            print('🎰 ROULETTE JÁTÉK 🎰')
 
-        eredmeny = random.choice(osszes_szam)
+            valasz = input(
+                'Mire szeretnél fogadni?\n'
+                '- szám\n'
+                '- szín\n'
+                '- pp (páros/páratlan)\n'
+                'Válaszod: '
+            ).lower()
 
-        jatek = Jatek(valasz, eredmeny, penz, tet)
+            eredmeny = random.choice(osszes_szam)
 
-        jatek.valasztas()
+            jatek = Jatek(valasz, eredmeny, penz, tet)
+            jatek.valasztas(allapot)
 
         penz = jatek.penz
         input('Folytatás...')
