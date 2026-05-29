@@ -25,7 +25,7 @@ def tet(penz):
 
     while True:
         print('::: Rakd meg a téteid! :::')
-        print(f'Egyenleged: {penz}')
+        print(f'Egyenleged: {penz}€')
 
         tet = input('Rakd fel a tétet: ')
 

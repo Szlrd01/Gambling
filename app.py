@@ -16,7 +16,7 @@ def start():
         else:
             tools.torles()
             print('----  Bálint-Akóts Diamond Casino  ----')
-            print(f'::: Egyenleged: {penz} :::')
+            print(f'::: Egyenleged: {penz}€ :::')
             print(f'\nMit szeretnél játszani?\n(1) Fej vagy írás\n(2) BlackJack\n(3) Slot\n(4) F1 fogadás\n(5) Roulette\n\nTovábbi lehetőségek:\n(e) VIP Casino\n(x) Mentés\n(0) Kilépés\n')
             x = input('Választásod: ')
             

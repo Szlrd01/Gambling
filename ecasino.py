@@ -46,7 +46,7 @@ def start(penz):
         else:
             tools.torles()
             print('----  VIP casino  ----')
-            print(f'Egyenleged: {penz}')
+            print(f'Egyenleged: {penz}€')
             x = input(f'\nMit akarsz játszani?\n(1) BlackJack\n(2) Slot\n(3) Roulette\n\n(x) Mentés\n(0) Kilépés\nVálasztásod: ')
             
             if x.isdigit():
