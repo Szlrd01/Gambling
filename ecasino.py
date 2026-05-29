@@ -1,9 +1,10 @@
-import vipslot
-import vipblackjack
 import tools
-import viproulette
+import blackjack
+import slot
+import roulette
 
 def start(penz):
+    normal = False
     while True:
         try:
             with open('ticket.txt','r') as t:
@@ -62,11 +63,11 @@ def start(penz):
 
 
             if x == 1:
-                penz = vipblackjack.blackjack(penz)
+                penz = blackjack.blackjack(penz)
             elif x == 2:
-                penz = vipslot.slot(penz)
+                penz = slot.slot(penz, normal)
             elif x == 3:
-                penz = viproulette.main(penz)
+                penz = roulette.main(penz)
             elif x == 0:
                 
                 tools.torles()

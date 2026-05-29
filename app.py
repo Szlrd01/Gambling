@@ -11,6 +11,7 @@ def start():
             penz = f.read()
             penz=int(penz)
     while True:
+        normal = True
         if penz <= 0:
             tools.vesztes()  
         else:
@@ -37,7 +38,7 @@ def start():
             elif x == 2:
                 penz = blackjack.blackjack(penz)
             elif x == 3:
-                penz = slot.slot(penz)
+                penz = slot.slot(penz,normal)
             elif x == 4:
                 penz = f1.formula1(penz)
             elif x == 5:

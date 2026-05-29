@@ -86,7 +86,7 @@ def blackjack(penz):
 
         if dealer_osszeg > 21 or player_osszeg > dealer_osszeg:
             print('Nyertél!')
-            penz += tet * 4
+            penz += tet * 2
 
         elif player_osszeg == dealer_osszeg:
             print('Döntetlen!')

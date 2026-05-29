@@ -52,3 +52,41 @@ def tet(penz):
 def mentes(penz):
     with open('penz.txt', 'w+',encoding='utf-8') as f:
         f.write(str(penz))
+
+
+def nyeres2(penz,tet):
+    penz=penz+(tet*2)
+    return penz
+def nyeres4(penz,tet):
+    penz=penz+(tet*4)
+    return penz
+
+def nyeresslot(penz,tet,jatek):
+    if jatek == "cseresznye":
+        penz=penz+(tet*2)
+    elif jatek == "gyémánt":
+        penz=penz+(tet*25)
+    elif jatek == "7":
+        penz=penz+(tet*100)
+    elif jatek == "coin":
+        penz=penz+(tet*50)
+    elif jatek == "banán":
+        penz=penz+(tet*10)
+    else:
+        pass
+    return penz
+
+def nyeresvipslot(penz,tet,jatek):
+    if jatek == "cseresznye":
+        penz=penz+(tet*4)
+    elif jatek == "gyémánt":
+        penz=penz+(tet*50)
+    elif jatek == "7":
+        penz=penz+(tet*200)
+    elif jatek == "coin":
+        penz=penz+(tet*100)
+    elif jatek == "banán":
+        penz=penz+(tet*20)
+    else:
+        pass
+    return penz

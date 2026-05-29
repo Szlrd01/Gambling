@@ -6,7 +6,7 @@ import random
 import tools
 import time
 
-def slot(penz):
+def slot(penz, normal):
     ikonok = ['💎','🍒','7️⃣','🪙','🍌']
     gy_db = 0
     cs_db = 0
@@ -47,32 +47,55 @@ def slot(penz):
 
         print(f'|\t{a}\t|\t{b}\t|\t{c}\t|')
         if a == '💎' and b == '💎' and c == '💎':
-            penz=penz+tet*25
+            jatek = 'gyémánt'
+            if normal:
+                penz = tools.nyeresslot(penz,tet,jatek)
+            elif not normal:
+                penz = tools.nyeresvipslot(penz,tet,jatek)
             print(f'Egyenleged: {penz}')
             print('Gratulálok, nyertél!')
             input('Folytatás...')
         elif a == '7️⃣' and b == '7️⃣' and c == '7️⃣':
-            penz=penz+tet*100
+            jatek = '7'
+            if normal:
+                penz = tools.nyeresslot(penz,tet,jatek)
+            elif not normal:
+                penz = tools.nyeresvipslot(penz,tet,jatek)
             print(f'Egyenleged: {penz}')
             print('Gratulálok, nyertél!')
             input('Folytatás...')
         elif a == '🍒' and b == '🍒' and c == '🍒':
-            penz=penz+tet*2
+            jatek = 'cseresznye'
+            if normal:
+                penz = tools.nyeresslot(penz,tet,jatek)
+            elif not normal:
+                penz = tools.nyeresvipslot(penz,tet,jatek)
             print(f'Egyenleged: {penz}')
             print('Gratulálok, nyertél!')
             input('Folytatás...')
         elif a == '🪙' and b == '🪙' and c == '🪙':
-            penz=penz+tet*50
+            jatek = 'coin'
+            if normal:
+                penz = tools.nyeresslot(penz,tet,jatek)
+            elif not normal:
+                penz = tools.nyeresvipslot(penz,tet,jatek)
             print(f'Egyenleged: {penz}')
             print('Gratulálok, nyertél!')
             input('Folytatás...')
         elif a == '🍌' and b == '🍌' and c == '🍌':
-            penz=penz+tet*10
+            jatek = 'banán'
+            if normal:
+                penz = tools.nyeresslot(penz,tet,jatek)
+            elif not normal:
+                penz = tools.nyeresvipslot(penz,tet,jatek)
             print(f'Egyenleged: {penz}')
             print('Gratulálok, nyertél!')
             input('Folytatás...')
         elif gy_db == 2 or cs_db == 2 or h_db == 2 or c_db == 2 or b_db == 2:
-            penz=penz+tet*5
+            if normal:
+                penz = tools.nyeres2(penz,tet)
+            elif not normal:
+                penz = tools.nyeres4(penz,tet)
             print(f'Egyenleged: {penz}')
             print('Gratulálok, nyertél!')
             input('Folytatás...')
