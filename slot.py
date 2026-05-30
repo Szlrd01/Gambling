@@ -39,7 +39,7 @@ def slot(penz, normal):
             print(f'\n‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n|\t{ikonok[random.randint(0,4)]}\t|\t{ikonok[random.randint(0,4)]}\t|\t{ikonok[random.randint(0,4)]}\t|\n___________________________________________________\n')
             time.sleep(0.5)
         tools.torles()
-        print('SLOT MACHINE')
+        print('🎰 SLOT MACHINE 🎰')
             
             
             
@@ -52,7 +52,7 @@ def slot(penz, normal):
                 penz = tools.nyeresslot(penz,tet,jatek)
             elif not normal:
                 penz = tools.nyeresvipslot(penz,tet,jatek)
-            print(f'Egyenleged: {penz}')
+            print(f'Egyenleged: {penz}€')
             print('Gratulálok, nyertél!')
             input('Folytatás...')
         elif a == '7️⃣' and b == '7️⃣' and c == '7️⃣':
@@ -61,7 +61,7 @@ def slot(penz, normal):
                 penz = tools.nyeresslot(penz,tet,jatek)
             elif not normal:
                 penz = tools.nyeresvipslot(penz,tet,jatek)
-            print(f'Egyenleged: {penz}')
+            print(f'Egyenleged: {penz}€')
             print('Gratulálok, nyertél!')
             input('Folytatás...')
         elif a == '🍒' and b == '🍒' and c == '🍒':
@@ -70,7 +70,7 @@ def slot(penz, normal):
                 penz = tools.nyeresslot(penz,tet,jatek)
             elif not normal:
                 penz = tools.nyeresvipslot(penz,tet,jatek)
-            print(f'Egyenleged: {penz}')
+            print(f'Egyenleged: {penz}€')
             print('Gratulálok, nyertél!')
             input('Folytatás...')
         elif a == '🪙' and b == '🪙' and c == '🪙':
@@ -79,7 +79,7 @@ def slot(penz, normal):
                 penz = tools.nyeresslot(penz,tet,jatek)
             elif not normal:
                 penz = tools.nyeresvipslot(penz,tet,jatek)
-            print(f'Egyenleged: {penz}')
+            print(f'Egyenleged: {penz}€')
             print('Gratulálok, nyertél!')
             input('Folytatás...')
         elif a == '🍌' and b == '🍌' and c == '🍌':
@@ -88,7 +88,7 @@ def slot(penz, normal):
                 penz = tools.nyeresslot(penz,tet,jatek)
             elif not normal:
                 penz = tools.nyeresvipslot(penz,tet,jatek)
-            print(f'Egyenleged: {penz}')
+            print(f'Egyenleged: {penz}€')
             print('Gratulálok, nyertél!')
             input('Folytatás...')
         elif gy_db == 2 or cs_db == 2 or h_db == 2 or c_db == 2 or b_db == 2:
@@ -96,7 +96,7 @@ def slot(penz, normal):
                 penz = tools.nyeres2(penz,tet)
             elif not normal:
                 penz = tools.nyeres4(penz,tet)
-            print(f'Egyenleged: {penz}')
+            print(f'Egyenleged: {penz}€')
             print('Gratulálok, nyertél!')
             input('Folytatás...')
         else:

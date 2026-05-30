@@ -46,9 +46,9 @@ def start(penz):
             tools.vesztes()  
         else:
             tools.torles()
-            print('----  VIP RÉSZLEG  ----')
+            print('---- 🏅 VIP RÉSZLEG 💎 ----')
             print(f'::: Egyenleged: {penz}€ :::')
-            x = input(f'\nMit akarsz játszani?\n(1) BlackJack\n(2) Slot\n(3) Roulette\n\n(x) Mentés\n(0) Kilépés\nVálasztásod: ')
+            x = input(f'\nMit szeretnél játszani?\n(1) BlackJack\n(2) Slot\n(3) Roulette\n\n(x) Mentés\n(0) Kilépés\nVálasztásod: ')
             
             if x.isdigit():
                 x = int(x)

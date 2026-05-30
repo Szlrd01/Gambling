@@ -13,6 +13,7 @@ def formula1(penz):
         tools.torles()
         nyertes=random.randint(0,1)
         while True:
+                print('🏎️  F1 FOGADÁS 🏁\n')
                 car = input('Ki fog nyerni? Ferrari vagy RedBull\nVálasztásod: ')
                 
                 if car.lower().strip() == 'redbull':
@@ -543,16 +544,16 @@ def formula1(penz):
         ''')
                 
                         
-                        time.sleep(1)
+                        time.sleep(0.5)
                         tools.torles()
                         if car == nyertes:
                                 penz=penz+(tet*4)
-                                print(f'Nyertél! Végső egyenleg: {penz}')
+                                print(f'Nyertél!')
+                                input(f'Végső egyenleg: {penz}€ ....')
                         else:                                
-                                print(f'Vesztettél! Végső egyenleg: {penz}')
+                                print(f'Vesztettél!')
+                                input(f'Végső egyenleg: {penz}€ ....')
                         tools.mentes(penz)
-                        input('...')
                         return penz
                 penz=anim(penz)
-                
                 return penz

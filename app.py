@@ -31,6 +31,7 @@ def start():
                     f.write(str(penz))
                 input('Mentve...')
             elif x == 'e':
+                tools.mentes(penz)
                 penz = vip.start(penz)
 
             if x == 1:

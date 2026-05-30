@@ -10,7 +10,7 @@ def fej_iras(penz):
         tools.torles()
         gep = random.choice(["fej", "írás"])        
         while True:
-            print("::: Fej vagy Írás? :::")
+            print("🪙 Fej vagy Írás? 🪙\n")
             print("(fej / írás / 0 - kilépés)")
             valasztas = input("Választásod: ").lower()
 
@@ -29,6 +29,7 @@ def fej_iras(penz):
                 break
 
             elif valasztas == '0':
+                penz+=tet
                 tools.torles()
                 break
             else:

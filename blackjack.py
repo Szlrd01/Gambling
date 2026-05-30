@@ -23,7 +23,7 @@ def blackjack(penz, normal):
 
         while True:
             tools.torles()
-            print('=== BLACKJACK ===')
+            print('🃏 BLACKJACK ♠️')
             player_osszeg = sum(player_kartyak)
 
             print(
