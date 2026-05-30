@@ -17,10 +17,15 @@ def start(penz):
                 
 
         if ticket == 0:
-            input('Jegyet kell vásárolnod!')
+            input('Jegyet kell vásárolnod...')
             x = input('Veszel jegyet? (igen/nem)\nÁra: 5000€ | Válaszod: ')
             if x == 'igen':
-                penz=penz-5000
+                if penz > 5000:
+                    penz=penz-5000
+                    input('\n✅ Sikeres vásárlás!')
+                else:
+                    input('\n❌ Nincs elég pénzed!')
+                    return penz               
                 with open('penz.txt','w+') as f:
                     f.write(str(penz))
                 ticket = 1
