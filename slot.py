@@ -35,8 +35,8 @@ def slot(penz, normal):
 
         for i in range(7):
             tools.torles()
-            print('SLOT MACHINE')
-            print(f'|\t{ikonok[random.randint(0,4)]}\t|\t{ikonok[random.randint(0,4)]}\t|\t{ikonok[random.randint(0,4)]}\t|')
+            print('🎰 SLOT MACHINE 🎰')
+            print(f'\n‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n|\t{ikonok[random.randint(0,4)]}\t|\t{ikonok[random.randint(0,4)]}\t|\t{ikonok[random.randint(0,4)]}\t|\n___________________________________________________\n')
             time.sleep(0.5)
         tools.torles()
         print('SLOT MACHINE')
@@ -45,7 +45,7 @@ def slot(penz, normal):
             
 
 
-        print(f'|\t{a}\t|\t{b}\t|\t{c}\t|')
+        print(f'\n‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n|\t{a}\t|\t{b}\t|\t{c}\t|\n___________________________________________________\n')
         if a == '💎' and b == '💎' and c == '💎':
             jatek = 'gyémánt'
             if normal:

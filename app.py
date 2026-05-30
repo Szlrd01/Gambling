@@ -4,7 +4,7 @@ import slot
 import blackjack
 import tools
 import roulette
-import ecasino
+import vip
 
 def start():
     with open('penz.txt', 'r') as f:
@@ -31,18 +31,18 @@ def start():
                     f.write(str(penz))
                 input('Mentve...')
             elif x == 'e':
-                penz = ecasino.start(penz)
+                penz = vip.start(penz)
 
             if x == 1:
                 penz = fejiras.fej_iras(penz)
             elif x == 2:
-                penz = blackjack.blackjack(penz)
+                penz = blackjack.blackjack(penz, normal)
             elif x == 3:
                 penz = slot.slot(penz,normal)
             elif x == 4:
                 penz = f1.formula1(penz)
             elif x == 5:
-                penz= roulette.main(penz)
+                penz= roulette.main(penz, normal)
             elif x == 0:
                 
                 tools.torles()

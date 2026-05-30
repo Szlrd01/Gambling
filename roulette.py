@@ -57,7 +57,7 @@ def porges_animacio(eredmeny):
     print(f"\r🎰 Eredmény: {szines_szam(eredmeny)}       ")
 
 
-def szam_tet(eredmeny, penz, tet):
+def szam_tet(eredmeny, penz, tet, normal):
 
     while True:
         valasz = input(
@@ -80,14 +80,17 @@ def szam_tet(eredmeny, penz, tet):
 
     if valasz == eredmeny:
         print('✅ Nyertél!')
-        penz = tet + penz + (tet * 2)
+        if normal:
+                penz = tools.nyeres2(penz,tet)
+        elif not normal:
+            penz = tools.nyeres4(penz,tet)
         return penz
     else:
         print('❌ Vesztettél!')
         return penz
 
 
-def szin_tet(eredmeny, penz, tet):
+def szin_tet(eredmeny, penz, tet, normal):
 
     while True:
         valasz = input(
@@ -103,12 +106,18 @@ def szin_tet(eredmeny, penz, tet):
 
     if valasz == "piros" and eredmeny in piros_szamok:
         print('✅ Nyertél!')
-        penz = tet + penz + (tet * 2)
+        if normal:
+                penz = tools.nyeres2(penz,tet)
+        elif not normal:
+            penz = tools.nyeres4(penz,tet)
         return penz
 
     elif valasz == "fekete" and eredmeny in fekete_szamok:
         print('✅ Nyertél!')
-        penz = tet + penz + (tet * 2)
+        if normal:
+                penz = tools.nyeres2(penz,tet)
+        elif not normal:
+            penz = tools.nyeres4(penz,tet)
         return penz
 
     else:
@@ -116,7 +125,7 @@ def szin_tet(eredmeny, penz, tet):
         return penz
 
 
-def paros_paratlan_tet(eredmeny, penz, tet):
+def paros_paratlan_tet(eredmeny, penz, tet, normal):
 
     while True:
         valasz = input(
@@ -136,12 +145,18 @@ def paros_paratlan_tet(eredmeny, penz, tet):
 
     elif valasz == "páros" and eredmeny % 2 == 0:
         print('✅ Nyertél!')
-        penz = tet + penz + (tet * 2)
+        if normal:
+                penz = tools.nyeres2(penz,tet)
+        elif not normal:
+            penz = tools.nyeres4(penz,tet)
         return penz
 
     elif valasz == "páratlan" and eredmeny % 2 == 1:
         print('✅ Nyertél!')
-        penz = tet + penz + (tet * 2)
+        if normal:
+                penz = tools.nyeres2(penz,tet)
+        elif not normal:
+            penz = tools.nyeres4(penz,tet)
         return penz
 
     else:
@@ -151,24 +166,25 @@ def paros_paratlan_tet(eredmeny, penz, tet):
 
 class Jatek:
 
-    def __init__(self, valasz, eredmeny, penz, tet):
+    def __init__(self, valasz, eredmeny, penz, tet, normal):
 
         self.valasz = valasz
         self.eredmeny = eredmeny
         self.penz=penz
         self.tet=tet
+        self.normal=normal
 
     def valasztas(self, allapot):
         if self.valasz == 'szám':
-            self.penz = szam_tet(self.eredmeny, self.penz, self.tet)
+            self.penz = szam_tet(self.eredmeny, self.penz, self.tet, self.normal)
             allapot = 1
 
         elif self.valasz == 'szín':
-            self.penz = szin_tet(self.eredmeny, self.penz, self.tet)
+            self.penz = szin_tet(self.eredmeny, self.penz, self.tet, self.normal)
             allapot = 1
 
         elif self.valasz == 'pp':
-            self.penz = paros_paratlan_tet(self.eredmeny, self.penz, self.tet)
+            self.penz = paros_paratlan_tet(self.eredmeny, self.penz, self.tet, self.normal)
             allapot = 1
 
         else:
@@ -178,7 +194,7 @@ class Jatek:
         return allapot
 
 
-def main(penz):
+def main(penz, normal):
     while True:
         tools.torles()
         penz, tet = tools.tet(penz)
@@ -191,7 +207,7 @@ def main(penz):
         while allapot == 0:
             tools.torles()
 
-            print('🎰 ROULETTE JÁTÉK 🎰')
+            print('🟥 ROULETTE 🟦')
 
             valasz = input(
                 'Mire szeretnél fogadni?\n'
@@ -203,7 +219,7 @@ def main(penz):
 
             eredmeny = random.choice(osszes_szam)
 
-            jatek = Jatek(valasz, eredmeny, penz, tet)
+            jatek = Jatek(valasz, eredmeny, penz, tet, normal)
             allapot = jatek.valasztas(allapot)
 
         penz = jatek.penz

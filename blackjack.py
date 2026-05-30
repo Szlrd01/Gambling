@@ -2,7 +2,7 @@ import random
 import tools
 
 
-def blackjack(penz):
+def blackjack(penz, normal):
     while True:
         tools.torles()
         penz, tet = tools.tet(penz)
@@ -86,7 +86,10 @@ def blackjack(penz):
 
         if dealer_osszeg > 21 or player_osszeg > dealer_osszeg:
             print('Nyertél!')
-            penz += tet * 2
+            if normal:
+                penz = tools.nyeres2(penz,tet)
+            elif not normal:
+                penz = tools.nyeres4(penz,tet)
 
         elif player_osszeg == dealer_osszeg:
             print('Döntetlen!')

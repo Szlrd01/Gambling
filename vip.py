@@ -18,7 +18,7 @@ def start(penz):
 
         if ticket == 0:
             input('Jegyet kell vásárolnod!')
-            x = input('Veszel jegyet? Ára: 5000€\nVálaszod: ')
+            x = input('Veszel jegyet? (igen/nem)\nÁra: 5000€ | Válaszod: ')
             if x == 'igen':
                 penz=penz-5000
                 with open('penz.txt','w+') as f:
@@ -46,8 +46,8 @@ def start(penz):
             tools.vesztes()  
         else:
             tools.torles()
-            print('----  VIP casino  ----')
-            print(f'Egyenleged: {penz}€')
+            print('----  VIP RÉSZLEG  ----')
+            print(f'::: Egyenleged: {penz}€ :::')
             x = input(f'\nMit akarsz játszani?\n(1) BlackJack\n(2) Slot\n(3) Roulette\n\n(x) Mentés\n(0) Kilépés\nVálasztásod: ')
             
             if x.isdigit():
@@ -63,13 +63,12 @@ def start(penz):
 
 
             if x == 1:
-                penz = blackjack.blackjack(penz)
+                penz = blackjack.blackjack(penz, normal)
             elif x == 2:
                 penz = slot.slot(penz, normal)
             elif x == 3:
-                penz = roulette.main(penz)
+                penz = roulette.main(penz, normal)
             elif x == 0:
-                
                 tools.torles()
                 break
 
