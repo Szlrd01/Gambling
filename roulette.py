@@ -81,9 +81,9 @@ def szam_tet(eredmeny, penz, tet, normal):
     if valasz == eredmeny:
         print('✅ Nyertél!')
         if normal:
-                penz = tools.nyeres2(penz,tet)
+                penz = tools.nyeres6(penz,tet)
         elif not normal:
-            penz = tools.nyeres4(penz,tet)
+            penz = tools.nyeres12(penz,tet)
         return penz
     else:
         print('❌ Vesztettél!')
