@@ -6,6 +6,7 @@ import tools
 import roulette
 import vip
 
+
 def start():
     with open('penz.txt', 'r') as f:
             penz = f.read()

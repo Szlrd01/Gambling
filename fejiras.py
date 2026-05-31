@@ -23,7 +23,6 @@ def fej_iras(penz):
                             
             elif valasztas in ["fej", "írás"]:
                 print(f"\nA gép dobása: {gep}")
-                penz-=tet
                 print("Nem találtad el!")
                 input('Enter...')
                 break

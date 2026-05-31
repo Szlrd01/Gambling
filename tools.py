@@ -60,6 +60,13 @@ def nyeres2(penz,tet):
 def nyeres4(penz,tet):
     penz=penz+(tet*4)
     return penz
+def nyeres6(penz,tet):
+    penz=penz+(tet*6)
+    return penz
+def nyeres12(penz,tet):
+    penz=penz+(tet*12)
+    return penz
+
 
 def nyeresslot(penz,tet,jatek):
     if jatek == "cseresznye":

@@ -553,7 +553,7 @@ def formula1(penz):
                         else:                                
                                 print(f'Vesztettél!')
                                 input(f'Végső egyenleg: {penz}€ ....')
-                        tools.mentes(penz)
                         return penz
                 penz=anim(penz)
+                tools.mentes(penz)
                 return penz
