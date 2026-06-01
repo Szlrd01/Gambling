@@ -97,7 +97,6 @@ def blackjack(penz, normal):
 
         else:
             print('Vesztettél!')
-            penz -= tet
         input('Folytatás...')
     print(f'Kiléptél. Végső egyenleg: {penz}')
     input('Kilépés...')

@@ -55,20 +55,25 @@ def mentes(penz):
 
 
 def nyeres2(penz,tet):
+    tet = int(tet)
     penz=penz+(tet*2)
     return penz
 def nyeres4(penz,tet):
+    tet = int(tet)
     penz=penz+(tet*4)
     return penz
 def nyeres6(penz,tet):
+    tet = int(tet)
     penz=penz+(tet*6)
     return penz
 def nyeres12(penz,tet):
+    tet = int(tet)
     penz=penz+(tet*12)
     return penz
 
 
 def nyeresslot(penz,tet,jatek):
+    tet = int(tet)
     if jatek == "cseresznye":
         penz=penz+(tet*2)
     elif jatek == "gyémánt":
@@ -84,6 +89,7 @@ def nyeresslot(penz,tet,jatek):
     return penz
 
 def nyeresvipslot(penz,tet,jatek):
+    tet = int(tet)
     if jatek == "cseresznye":
         penz=penz+(tet*4)
     elif jatek == "gyémánt":
